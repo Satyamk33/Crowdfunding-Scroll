@@ -1,11 +1,11 @@
-import React, { useState, UseContext} from "react";
+import React, { useState, useContext} from "react";
 
 import {CrowdFundingContext} from "../Context/CrowdFunding";
 import { Logo, Menu} from "../Components/index";
 
 const NavBar = () => {
   const { currentAccount, connectWallet} = useContext(CrowdFundingContext);
-  const [ siMenuOpen, setIsMenuOpen] = useState(false);
+  const [ isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuList = ["White Paper", "Project", "Donation", "Members"];
   return (
@@ -21,7 +21,7 @@ const NavBar = () => {
             >
               <Logo color="text-white" />
               <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                Company
+                BITSXPOSTMAN
               </span>
             </a>
             <ul class="flex items-center hidden space-x-8 lg:flex">

@@ -14,27 +14,40 @@ contract CrowdFunding{
      }
 
      mapping(uint256 => Campaign) public campaigns;
+     mapping(address => Campaign[]) public myCampaigns;
 
      uint256 public numberofCampaigns = 0;
 
-     function createCampaign(address _owner, string memory _title, string memory _description, uint256 _target, uint256 _deadline) public returns (uint256) {
-              Campaign storage campaign = campaigns[numberofCampaigns];
+    function createCampaign(string memory _title, string memory _description, uint256 _target, uint256 _deadline) public {
+            Campaign storage campaign = campaigns[numberofCampaigns];
 
-              require(campaign.deadline < block.timestamp, "The deadline should be a date in future");
+            require(campaign.deadline > block.timestamp, "The deadline should be a date in future");
 
-              campaign.owner = _owner;
-              campaign.title = _title;
-              campaign.description = _description;
-              campaign.target = _target;
-              campaign.deadline = _deadline;
-              campaign.amountCollected = 0;
+            campaign.owner = msg.sender;
+            campaign.title = _title;
+            campaign.description = _description;
+            campaign.target = _target;
+            campaign.deadline = _deadline;
+            campaign.amountCollected = 0;
 
-              numberofCampaigns++;
+            myCampaigns[msg.sender].push(campaign);
 
-              return numberofCampaigns -1;
-     }
+            numberofCampaigns++;
+    }
 
-     function donateToCampaign(uint256 _id) public payable {
+    function updateCampaign(uint256 _campaignId, uint256 _newTarget, uint256 _newDeadline) public {
+    
+        Campaign storage campaign = campaigns[_campaignId];
+
+        require(msg.sender == campaign.owner, "Only the campaign owner can update the campaign");
+        require(_newDeadline > block.timestamp, "The deadline should be a date in future");
+
+        campaign.target = _newTarget;
+        campaign.deadline = _newDeadline;
+
+    }
+
+    function donateToCampaign(uint256 _id) public payable {
         uint256 amount = msg.value;
 
         Campaign storage campaign = campaigns[_id];
@@ -47,13 +60,13 @@ contract CrowdFunding{
         if(sent) {
             campaign.amountCollected = campaign.amountCollected + amount;
         }
-     }
+    }
 
-       function getDonators(uint256 _id) view public returns (address[] memory, uint256[] memory) {
+    function getDonators(uint256 _id) view public returns (address[] memory, uint256[] memory) {
         return (campaigns[_id].donators, campaigns[_id].donations);
-       }
+    }
 
-       function getCampaigns() public view returns (Campaign[] memory) {
+    function getCampaigns() public view returns (Campaign[] memory) {
         Campaign[] memory allCampaigns = new Campaign[](numberofCampaigns);
 
         for(uint i =0; i < numberofCampaigns; i++ ){
@@ -63,6 +76,7 @@ contract CrowdFunding{
         }
 
         return allCampaigns;
-       }
+    }
 
 }
+
