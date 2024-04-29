@@ -17,10 +17,10 @@ Active Donators Award System, Project Advertisement (Featured Projects), Tiers/M
 
 # To get started with our DApp(Local Host Using Hardhat)
  1)Install all dependencies by npm install<br>
- 2)In the terminal run command npx hardhat node
- 3)In the split terminal run npx hardhat run --network localhost scripts/deploy.js
- 4)This will generate two folders artifacts and cache. Delete the CrowdFunding.json file from Context folder. Go to artifacts/contracts, copy the new CrowdFunding.json from there and paste in the Context Folder.
- 5) Now in the terminal run npm run dev.
+ 2)In the terminal run command npx hardhat node<br>
+ 3)In the split terminal run npx hardhat run --network localhost scripts/deploy.js<br>
+ 4)This will generate two folders artifacts and cache. Delete the CrowdFunding.json file from Context folder. Go to artifacts/contracts, copy the new CrowdFunding.json from there and paste in the Context Folder.<br>
+ 5) Now in the terminal run npm run dev.<br><br>
 
 Thank You for Using our CrowdFunding Dapp.
 
