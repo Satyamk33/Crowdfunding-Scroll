@@ -21,7 +21,7 @@ const NavBar = () => {
             >
               <Logo color="text-white" />
               <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                BITSXPOSTMAN
+                ABCLABS X SCROLL
               </span>
             </a>
             <ul class="flex items-center hidden space-x-8 lg:flex">
