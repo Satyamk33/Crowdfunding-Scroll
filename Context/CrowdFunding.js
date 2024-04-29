@@ -26,11 +26,10 @@ export const CrowdFundingProvider = ({children}) => {
         console.log(currentAccount);
         try {
             const transaction = await contract.createCampaign(
-                currentAccount, // owner
                 title, // title
                 description, // description
                 ethers.utils.parseUnits(amount, 18),
-                new Date(deadline).getTime() // deadline
+                new Date(deadline).getTime(), // deadline
             );
             
             await transaction.wait();
@@ -129,6 +128,29 @@ export const CrowdFundingProvider = ({children}) => {
         return parsedDonations;
     };
 
+    const addMilestone = async (campaignId, milestone) => {
+        const { description, targetAmount, deadline } = milestone;
+        const web3Modal = new Web3Modal();
+        try {
+            const connection = await web3Modal.connect();
+            const provider = new ethers.providers.Web3Provider(connection);
+            const signer = provider.getSigner();
+            const contract = fetchContract(signer);
+
+            const transaction = await contract.addMilestone(
+                campaignId,
+                description,
+                ethers.utils.parseEther(targetAmount),
+                new Date(deadline).getTime()
+            );
+
+            await transaction.wait();
+
+            console.log("milestone added successfully", transaction);
+        } catch (error) {
+            console.log("failed to add milestone", error);
+        }
+    };
     // --- CHECK IS WALLET IS CONNECTED
     const checkIfWalletConnected = async () => {
         try {
@@ -233,6 +255,7 @@ export const CrowdFundingProvider = ({children}) => {
                 donate,
                 getDonations,
                 connectWallet,
+                addMilestone,
             }}
         >
             {children}
