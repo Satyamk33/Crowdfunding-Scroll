@@ -18,6 +18,15 @@ const Hero = ({ titleData, createCampaign }) => {
 
   };
 
+  const addNewMilestone = async (e) => {
+    e.preventDefault();
+    try {
+        const data = await addMilestone(campaignId, milestone); 
+    } catch (error) {
+        console.log(error);
+    }
+};
+
   return (
     <div className="relative">
       <span className="coverLine"></span>
@@ -45,7 +54,7 @@ const Hero = ({ titleData, createCampaign }) => {
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
                   Crowd Funding Dapp <br className="hidden md:block"/>
-                  By Postman Labs</h2>
+                  By ABC Labs</h2>
                   <p className="max-w-xl mb-4 text-base text-white md:text-lg">
                     Welcome to our project for this Hackathon
                   </p>
@@ -146,7 +155,7 @@ const Hero = ({ titleData, createCampaign }) => {
                                 htmlFor="email"
                                 className="inline-block mb-1 font-medium"
                                 >
-                                  Target Amount
+                                  Date
                                 </label>
                                 <input 
                               onChange={(e) =>
@@ -172,9 +181,20 @@ const Hero = ({ titleData, createCampaign }) => {
                                 className="inline-flex items-center justify-center w-full h-12 px-6
                                 font-medium tracking-wide text-white transition duration-200
                                 rounded shadow-md bg-deep-purple-accent-400
-                                hover:bg-deep-purple-accent-700 focus:shadow-outline
+                                hover:bg-black hover:text-white focus:shadow-outline
                                 focus:outline-none newColor"
                                 >Create Campaign</button>
+                                </div>
+                                <div className="mt-4 mb-2 sm:mb-4">
+                                <button 
+                                onClick={(e) => addNewMilestone(e)}
+                                type="submit"
+                                className="inline-flex items-center justify-center w-full h-12 px-6
+                                font-medium tracking-wide text-white transition duration-200
+                                rounded shadow-md bg-deep-purple-accent-400
+                                hover:bg-black hover:text-white focus:shadow-outline
+                                focus:outline-none newColor"
+                                >Add your Milestone</button>
                                 </div>
                                 <p className="text-xs text-gray-600 sm:text-sm">
                                   Create your Campaign to raise funds
@@ -191,3 +211,4 @@ const Hero = ({ titleData, createCampaign }) => {
 };
 
 export default Hero;
+
