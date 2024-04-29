@@ -2,18 +2,18 @@ import React from "react";
 
 const Footer = () => {
   const productList = ["Market", "ERC20 Token", "Donation"];
-  const contactList = ["postman_blockchain@pilani.bits-pilani.ac.in", "info@pilani.bits-pilani.ac.in", "Contact Us"];
-  const UsefullLinks = ["Home", "About Us", "Postman BlkChain"];
+  const contactList = ["abc123456@gmail.com", "info123456@gmail.com", "Contact Us"];
+  const UsefullLinks = ["Home", "About Us", "ABC Blockchain"];
   return (
     <footer1 class="text-center text-white, backgroundMain lg:text-left">
       <div class="mx-6 py-10 text-center md:text-left">
         <div class="grid-1, grid gap-8 md:grid-cols-2 lg:grid-cols-4">
          <div class="">
           <h6 class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-            BITSPILANI POSTMAN LAB CrowdFund
+            ABC LABS CrowdFund DAPP
             </h6>
             <p>
-            Here comes the BlockChain Crowdfunding dAapp by BITS Pilani Postman Lab
+            Here comes the BlockChain Crowdfunding dAapp by ABC Labs
             </p>
          </div>
          <div class="">
@@ -51,7 +51,7 @@ const Footer = () => {
       <div class="backgroundWhite p-6 text-center">
           <span> 2024 Copyright: </span>
           <a class="font-semibold" href="https://tw-elements.com/">
-            BITSPILANI POSTMAN LAB
+            Crowd Fund lab
           </a>
       </div>
       </footer1>
