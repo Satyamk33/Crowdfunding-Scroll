@@ -16,7 +16,7 @@ Multichain Functionality:Implement the ability for users from different blockcha
 Active Donators Award System, Project Advertisement (Featured Projects), Tiers/Multiple Donation Amount Option, KYC etc.
 
 # To get started with our DApp(Local Host Using Hardhat)
- 1)Install all dependencies by npm install
+ 1)Install all dependencies by npm install<br>
  2)In the terminal run command npx hardhat node
  3)In the split terminal run npx hardhat run --network localhost scripts/deploy.js
  4)This will generate two folders artifacts and cache. Delete the CrowdFunding.json file from Context folder. Go to artifacts/contracts, copy the new CrowdFunding.json from there and paste in the Context Folder.
