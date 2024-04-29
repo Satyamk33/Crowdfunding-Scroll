@@ -8,13 +8,13 @@ Revolutionize the way projects and ideas are funded with our blockchain crowdfun
 Our crowdfunding DApp enables project creators to raise capital directly from a global pool of investors without the need for intermediaries. By utilizing smart contracts, the DApp automates the fundraising process, ensuring that funds are released to project creators only when predefined milestones are met, thereby increasing accountability and reducing the risk of fraud
 
 Future Scope
-Connecting with IPFS: We can connect our contract with IPFS, so that the creators can deploy images and progress of their BUILDS without storing this data on Blockchain 
-Report Functionality:In the future, we plan to implement a report functionality where donors can report instances where project creators fail to fulfill their promises. Upon verification, the project creator's ID will be banned from creating another campaign.
-Business Model 
-Fees Charging for Uploading:In the future, we may introduce a fee charged for uploading projects onto the platform.
-Security Deposit: A 5% security deposit may be required in the future when submitting a project. This deposit would be refunded upon successful completion of the project.
-Multichain Functionality:Implement the ability for users from different blockchain networks to donate to projects.
-Active Donators Award System, Project Advertisement (Featured Projects), Tiers/Multiple Donation Amount Option, KYC etc.
+Connecting with IPFS: We can connect our contract with IPFS, so that the creators can deploy images and progress of their BUILDS without storing this data on Blockchain<br> 
+Report Functionality:In the future, we plan to implement a report functionality where donors can report instances where project creators fail to fulfill their promises. Upon verification, the project creator's ID will be banned from creating another campaign.<br>
+Business Model <br>
+Fees Charging for Uploading:In the future, we may introduce a fee charged for uploading projects onto the platform.<br>
+Security Deposit: A 5% security deposit may be required in the future when submitting a project. This deposit would be refunded upon successful completion of the project.<br>
+Multichain Functionality:Implement the ability for users from different blockchain networks to donate to projects.<br>
+Active Donators Award System, Project Advertisement (Featured Projects), Tiers/Multiple Donation Amount Option, KYC etc.<br><br>
 
 # To get started with our DApp(Local Host Using Hardhat)
  1)Install all dependencies by npm install<br>
