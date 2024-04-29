@@ -8,6 +8,7 @@ Revolutionize the way projects and ideas are funded with our blockchain crowdfun
 Our crowdfunding DApp enables project creators to raise capital directly from a global pool of investors without the need for intermediaries. By utilizing smart contracts, the DApp automates the fundraising process, ensuring that funds are released to project creators only when predefined milestones are met, thereby increasing accountability and reducing the risk of fraud
 
 Future Scope
+Connecting with IPFS: We can connect our contract with IPFS, so that the creators can deploy images and progress of their BUILDS without storing this data on Blockchain 
 Report Functionality:In the future, we plan to implement a report functionality where donors can report instances where project creators fail to fulfill their promises. Upon verification, the project creator's ID will be banned from creating another campaign.
 Business Model 
 Fees Charging for Uploading:In the future, we may introduce a fee charged for uploading projects onto the platform.
