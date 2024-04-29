@@ -188,62 +188,6 @@ export const CrowdFundingProvider = ({children}) => {
             console.log("Error while connecting to Wallet");
         }
     };
-
-    const IPFS = require('ipfs-core');
-
-    async function uploadFileToIPFS(file) {
-        const ipfs = await IPFS.create();
-
-        try {
-            // Read the file content
-            const fileContent = await readFileContent(file);
-
-            // Add the file to IPFS
-            const { cid } = await ipfs.add(fileContent);
-
-            // Return the CID (Content Identifier) of the uploaded file
-            return cid.toString();
-        } catch (error) {
-            console.error('Error uploading file to IPFS:', error);
-            throw error;
-        } finally {
-            // Close the IPFS instance to release resources
-            await ipfs.stop();
-        }
-    }
-
-    async function readFileContent(file) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                resolve(reader.result);
-            };
-
-            reader.onerror = error => {
-                reject(error);
-            };
-
-            // Read the file as ArrayBuffer (binary data)
-            reader.readAsArrayBuffer(file);
-        });
-    }
-
-    // Example usage:
-    // const fileInput = document.getElementById('fileInput'); // Assuming you have an input element with id 'fileInput'
-    // fileInput.addEventListener('change', async (event) => {
-    //     const file = event.target.files[0];
-    //     if (file) {
-    //         try {
-    //             const ipfsHash = await uploadFileToIPFS(file);
-    //             console.log('File uploaded to IPFS. IPFS Hash:', ipfsHash);
-    //         } catch (error) {
-    //             console.error('Error:', error);
-    //         }
-    //     }
-    // });
-
-
     return (
         <CrowdFundingContext.Provider
             value={{
