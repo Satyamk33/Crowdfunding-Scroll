@@ -23,6 +23,9 @@ Active Donators Award System, Project Advertisement (Featured Projects), Tiers/M
  4)This will generate two folders artifacts and cache. Delete the CrowdFunding.json file from Context folder. Go to artifacts/contracts, copy the new CrowdFunding.json from there and paste in the Context Folder.<br>
  5) Now in the terminal run npm run dev.<br><br>
 
+ Deployed on Scroll Seplioa- Contract: 0x1a4cdace068fc76c0d10d2a84892fd9e117d42b2<br>
+ Verified: https://sepolia.scrollscan.com/verifyContract-solc?a=0x1a4cdace068fc76c0d10d2a84892fd9e117d42b2&c=v0.8.25%2Bcommit.b61c2a91&lictype=2<br><br>
+
 Thank You for Using our CrowdFunding Dapp.
 
 
